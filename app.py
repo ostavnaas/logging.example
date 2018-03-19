@@ -1,4 +1,4 @@
-from log import log
+from log import Log
 from some_module import Some
 import logging
 
@@ -14,7 +14,7 @@ class App:
 
 
 # Customize how the logger behaves
-log = log()
+log = Log()
 log.setup_logging()
 
 my_app = App()

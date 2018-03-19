@@ -5,7 +5,6 @@ import logging
 
 class App:
     def __init__(self):
-        log()
         self.logger = logging.getLogger('app_name')
 
     def do_something(self):
@@ -13,6 +12,10 @@ class App:
         self.logger.warning('Log only to file')
         self.logger.error('log to both file and console')
 
+
+# Customize how the logger behaves
+log = log()
+log.setup_logging()
 
 my_app = App()
 my_app.do_something()

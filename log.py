@@ -4,6 +4,9 @@ import logging.handlers
 
 class log:
     def __init__(self):
+        pass
+
+    def setup_logging(self):
         formt = '%(asctime)s - %(filename)s - %(levelname)s - %(message)s'
         formatter = logging.Formatter(formt)
 
@@ -16,8 +19,8 @@ class log:
         fh.setFormatter(formatter)
 
         logger = logging.getLogger('app_name')
-        # This must be lower than other handlers, otherwise it will cut of the
-        # handlers
+        # logger.setLevel must be lower than setLevel for all other handlers,
+        # otherwise it will cut off before reaching the other handlers
         logger.setLevel(logging.INFO)
         logger.addHandler(ch)
         logger.addHandler(fh)
